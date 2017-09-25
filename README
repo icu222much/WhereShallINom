@@ -1,0 +1,18 @@
+This is a web app that displays up to three restaurants near specified locations
+
+Technologies utilized:
+- HTML
+- CSS (LESS)
+- JavaScript (jQuery, Google Maps/Places API)
+- Babel
+- Gulp
+
+Steps to launch project:
+1) Open command line path to:    /WhereToNom
+2) Install packages via command: npm install
+3) Run local server via command: gulp
+4) View project in browser at:   http://localhost:9005/
+
+I can be reached via:
+- JonChanDev@gmail.com
+- http://www.JonChan.ca

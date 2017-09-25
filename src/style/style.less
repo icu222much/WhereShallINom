@@ -1,0 +1,212 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+@rootFontSize: 14px;
+@panelWidth: 40%;
+@offBlack: #444444;
+@offWhite: #F1F1F1; 
+@highlightColour: #069f8b;
+@red: #bf224a;
+
+body {
+  height: 100%;
+  font-size: @rootFontSize;
+  font-family: 'Ubuntu', 'Trebuchet MS', 'Verdana', 'sans-serif';
+  color: @offBlack;
+}
+
+html {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.map {
+  float: right;
+  height: 100%;
+  width: 100% - @panelWidth;
+  box-sizing: border-box;
+}
+
+.panel {
+  float: right;
+  padding: 25px 25px 0 40px;
+  height: 100%;
+  width: @panelWidth;
+  background: @offWhite;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    background-color: @offWhite;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 4px;
+    background-color: lighten(@offBlack, 25%);
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background: lighten(@offBlack, 25%);
+  }
+}
+
+.title {
+  margin-bottom: 5px;
+  font-size: 2.1em;
+  font-weight: bold;
+  color: @highlightColour;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.search {
+  margin: 10px 0 30px 0;
+
+  &__query {
+    margin: 0 20px 10px 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid @offBlack;
+    box-sizing: border-box;
+  }
+
+  &__submit {
+    display: inline-block;
+    margin-top: 20px;
+    padding-top: 11px;
+    width: 100%;
+    height: 39px;
+    background: lighten(@highlightColour, 1%);
+    background-size: contain;
+    color: @offWhite;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 2em;
+
+    &:hover {
+      background-color: lighten(@highlightColour, 5%);
+    }
+
+    &:active {
+      background-color: darken(@highlightColour, 5%);
+    }
+  }
+
+  &__price {
+    display: inline-block;    
+    padding: 7px 12px;
+    width: 25%;
+    text-align: center;
+    box-sizing: border-box;
+    background: darken(@offWhite, 10%);
+    border: 1px solid @offBlack;
+    font-size: 1em;
+    font-weight: bold;
+    border-right: 0; 
+    cursor: pointer;
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+      border-right: 1px solid @offBlack;
+    }
+
+    &:hover {
+      background: darken(@offWhite, 5%);
+    }
+
+    &--toggle {
+      color: @highlightColour;
+      background: darken(@offWhite, 20%);
+    }
+  }
+}
+
+.restaurant {
+  padding: 35px 0 35px 0;
+  border-top: 1px solid lighten(@offBlack, 55%);
+  cursor: pointer;
+
+  &--highlight {
+    margin-left: -40px;
+    padding-left: 15px;
+    border-left: 25px solid @highlightColour;
+  }
+
+  &__name {
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  &__rating {
+    display: inline-block;
+    font-size: 1.3em;
+    line-height: 1em;
+    letter-spacing: -0.08em;
+  }
+
+  &__price {
+    display: inline-block;
+    margin: 0 0 0.6em 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  &__closing { 
+    color: @red;
+    margin-bottom: 1em;
+  }
+
+  &__phone {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    color: lighten(@offBlack, 20%);
+  }
+
+  &__address {
+    margin-bottom: 0.5em;
+    color: lighten(@offBlack, 20%);
+  }
+
+  &__website {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    width: 100%;
+    color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: lighten(@offBlack, 20%);
+  }
+}
+
+@media (max-width: 800px) {
+  .restaurant {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 670px) {
+  .map {
+    width: 40%;
+  }
+
+  .panel {
+    width: 60%;
+  }
+}
